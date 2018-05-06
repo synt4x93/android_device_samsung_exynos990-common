@@ -1068,12 +1068,6 @@ on fs
 # GPIO
     chown root system /sys/class/secgpio_check/secgpio_check_all/check_requested_gpio
 
-# Copy DRM Key
-#    copy /system/app/wv.keys /factory/wv.keys
-
-# Permission for DRM Key
-#    chmod 0644 /factory/wv.keys
-
 # Permission for flashlight control for HAL3.3
 # The Istor espresso board does not have the flash led h/w, So the below permission line are blocked.
 # If you want to test the flashlight in board which have the flash led h/w, Enable the below blocked lines.
@@ -1088,41 +1082,6 @@ on fs
 
 #mDNIe
     exec - system system -- /system/bin/mafpc_write
-
-# ARGOSD
-service argos-daemon /vendor/bin/argosd
-    class main
-    user system
-    group system radio
-
-# Epic daemon
-service epicd /vendor/bin/epic
-    socket epic dgram 666 system system u:object_r:epicd_socket:s0
-    class main
-    user system
-    group system
-    writepid /dev/cpuset/system-background/tasks
-    seclabel u:r:epicd:s0
-
-service fuse_sdcard /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/sdcard /storage/sdcard
-    class late_start
-    disabled
-service fuse_usb1 /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/usb1 /storage/usb1
-    class late_start
-    disabled
-service fuse_usb2 /system/bin/sdcard -u 1023 -g 1023 -d /mnt/media_rw/usb2 /storage/usb2
-    class late_start
-    disabled
-
-service abox /vendor/bin/main_abox 18c50000.abox /data/vendor/log/abox
-    class late_start
-    user audioserver
-    group system
-
-service abox_log /vendor/bin/abox_log sec-audio-debug /data/vendor/log/abox
-    class late_start
-    user audioserver
-    group system
 
 # Set watchdog timer to 30 seconds and pet it every 10 seconds to get a 20 second margin
 service watchdogd /system/bin/watchdogd 10 20
@@ -1143,11 +1102,6 @@ on property:ro.bootmode=charger
     mkdir /efs/lpm 0775 system system
     class_start sec-charger
 
-# on userdebug and eng builds, enable kgdb on the serial console
-on property:ro.debuggable=1
-    write /sys/module/kgdboc/parameters/kgdboc ttyFIQ1
-    write /sys/module/fiq_debugger/parameters/kgdb_enable 1
-
 # LCD Debug Features
 on fs && property:ro.debuggable=1
     chown system system /sys/class/lcd/panel/aid_log
@@ -1155,46 +1109,4 @@ on fs && property:ro.debuggable=1
     chown system system /sys/class/lcd/panel/read_mtp
     chown system system /sys/class/lcd/panel/write_mtp
     chown system system /dev/panel_spi
-
-# Sysscope
-service prepare_param /system/bin/prepare_param.sh /dev/block/platform/13100000.ufs/by-name/param
-    class core
-    user root
-    group root
-    seclabel u:r:prepare_param:s0
-    oneshot
-
-# Fingerprint daemon
-service qfp-daemon /vendor/bin/qfp-daemon
-	class late_start
-	user system
-	group system drmrpc diag input
-
-# Pageboostd
-on property:sys.boot_completed=1
-    start pageboostd
-    start vramdiskd
-
-service pageboostd /system/bin/pageboostd
-    class main
-    user system
-    group system mount radio net_bt sdcard_rw shell media media_rw
-    socket pageboostd seqpacket 0660 system system
-    disabled
-
-service vramdiskd /system/bin/vramdiskd
-    class core
-    user system
-    group system install mount radio net_bt sdcard_rw shell media media_rw
-    capabilities SYS_RESOURCE
-    socket vramdiskd seqpacket 0660 system system
-    disabled
-
-# SSWAP
-service swapon /sbin/sswap -s -z -f 2560 -d 10 -x 160 -y 130
-    class core
-    user root
-    group root
-    seclabel u:r:sswap:s0
-    oneshot
 
