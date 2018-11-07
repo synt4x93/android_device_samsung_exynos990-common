@@ -27,7 +27,6 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(PLATFORM_PATH)/overlay \
     $(PLATFORM_PATH)/overlay-lineage
 
-PRODUCT_ENFORCE_RRO_TARGETS := \
-    framework-res
+PRODUCT_ENFORCE_RRO_TARGETS += *
 
 include $(PLATFORM_PATH)/platform/*.mk
