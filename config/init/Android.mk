@@ -24,6 +24,14 @@ LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR_ETC)
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
+LOCAL_MODULE := fstab.exynos990_ramdisk
+LOCAL_SRC_FILES := fstab.exynos990
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_STEM := fstab.exynos990
+LOCAL_MODULE_PATH := $(TARGET_RAMDISK_OUT)
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
 LOCAL_MODULE := init.exynos990.root.rc
 LOCAL_SRC_FILES := init.exynos990.root.rc
 LOCAL_MODULE_CLASS := ETC
