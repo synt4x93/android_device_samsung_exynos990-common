@@ -16,6 +16,9 @@
 
 PLATFORM_PATH := device/samsung/exynos990-common
 
+# Dynamic Partitions
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(PLATFORM_PATH)
