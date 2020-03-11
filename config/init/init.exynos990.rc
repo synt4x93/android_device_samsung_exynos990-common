@@ -1071,6 +1071,9 @@ on fs
     chown system system /sys/class/mdnie/mdnie/bypass
     chown system system /sys/class/mdnie/mdnie/mdnie_ldu
     chown system system /sys/class/mdnie/mdnie/hdr
+    # ISunlightEnhancement
+    chown system system /sys/class/mdnie/mdnie/lux
+    chmod 0644 /sys/class/mdnie/mdnie/lux
 
 # GPIO
     chown root system /sys/class/secgpio_check/secgpio_check_all/check_requested_gpio
