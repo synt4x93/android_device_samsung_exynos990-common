@@ -57,16 +57,16 @@ TARGET_SPECIFIC_HEADER_PATH := $(PLATFORM_PATH)/hardware/include
 TARGET_KERNEL_SOURCE = kernel/samsung/exynos990/
 TARGET_KERNEL_CLANG_COMPILE := true
 
+BOARD_CUSTOM_BOOTIMG         := true
+BOARD_CUSTOM_BOOTIMG_MK      := $(PLATFORM_PATH)/kernel/mkbootimg.mk
 BOARD_KERNEL_BASE            := 0x10000000
 # See `bbootimg -i boot.img`
 BOARD_KERNEL_PAGESIZE        := 2048
 # Looks like Samsung's sboot doesn't suppored a zipped Kernel
 BOARD_KERNEL_IMAGE_NAME      := Image
-# Build the device tree base image
-BOARD_KERNEL_SEPARATED_DTB   := true
-BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 # Build a device tree overlay
 BOARD_KERNEL_SEPARATED_DTBO  := true
+BOARD_DTBO_CFG               := $(PLATFORM_PATH)/kernel/$(TARGET_DEVICE).cfg
 
 # See `bbootimg -i boot.img`
 BOARD_DTB_OFFSET             := 0x00000000
