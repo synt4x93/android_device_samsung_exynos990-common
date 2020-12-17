@@ -1,6 +1,9 @@
 import /prism/etc/init/init.rc
 
-on early-init
+on init
+    # for tsp cmd node
+    chown system radio /sys/class/sec/tsp/cmd
+
     # for audit message
     chown system system /proc/avc_msg
     chmod 0660 /proc/avc_msg
