@@ -1,0 +1,7 @@
+# hal_keymaster_default.te
+
+teegris_use(hal_keymaster_default)
+allow hal_keymaster_default efs_file:dir search;
+binder_call(hal_keymaster_default, hal_keymaster_strongbox);
+r_dir_file(hal_keymaster_default, prov_efs_file)
+

@@ -1,0 +1,13 @@
+# vendor_init.te
+
+allow vendor_init tmpfs:dir { write add_name };
+allow vendor_init tmpfs:lnk_file create;
+allow vendor_init proc_dirty:file {  write getattr };
+allow vendor_init cgroup:file { getattr };
+
+set_prop(vendor_init, persist_rmnet_prop);
+set_prop(vendor_init, vold_prop);
+
+get_prop(vendor_init, vendor_factory_prop);
+get_prop(vendor_init, vendor_radio_prop);
+set_prop(vendor_init, persist_data_wda_prop);
