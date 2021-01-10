@@ -935,7 +935,6 @@ on fs
     wait /dev/block/platform/13100000.ufs/by-name/sec_efs
     mount ext4 /dev/block/platform/13100000.ufs/by-name/sec_efs /efs nosuid nodev noatime noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic    
     setprop ro.crypto.fde_algorithm AES-256-XTS-DISK
-    setprop ro.crypto.fuse_sdcard true
 
     wait /dev/block/platform/13100000.ufs/by-name/spu
     mount ext4 /dev/block/platform/13100000.ufs/by-name/spu /spu nosuid nodev noatime noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic
