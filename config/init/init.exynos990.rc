@@ -326,8 +326,6 @@ on post-fs
     setrlimit 8 67108864 67108864
 
 on post-fs-data
-# Samsung Pay
-    mkdir /efs/pfw_data 0760 vendor_spay vendor_spay
 
 # Log data folder
     mkdir /data/vendor 0771 root system

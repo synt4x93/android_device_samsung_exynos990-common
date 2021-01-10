@@ -187,10 +187,6 @@ on post-fs-data
     chmod 0660 /sys/class/sec/hdm/hdm_test
     mkdir /data/vendor/tz_hdm 0770 system system
 
-    # UWB
-    mkdir /data/vendor/uwb 0775 system uwb
-    mkdir /vendor/firmware/uwb 0744 system uwb
-
     # NFC: create data/nfc for nv storage
     mkdir /data/nfc 0770 nfc nfc
     mkdir /data/nfc/param 0770 nfc nfc
