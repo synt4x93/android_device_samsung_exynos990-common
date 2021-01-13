@@ -306,16 +306,6 @@
         <fqname>@1.1::IUsb/default</fqname>
     </hal>
     <hal format="hidl">
-        <name>android.hardware.weaver</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IWeaver</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.0::IWeaver/default</fqname>
-    </hal>
-    <hal format="hidl">
         <name>vendor.samsung.hardware.audio</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
