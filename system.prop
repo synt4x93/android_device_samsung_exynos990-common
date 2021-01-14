@@ -8,7 +8,7 @@ ro.cmc.device_type=pd
 ro.cmc.version=2.0
 
 ### gfx
-ro.gfx.driver.0=com.samsung.gamedriver.S11MaliG77
+ro.gfx.driver.0=com.samsung.gamedriver.ex990
 ro.gfx.driver.1=com.samsung.pregpudriver.ex990
 ro.hardware.egl=mali
 
