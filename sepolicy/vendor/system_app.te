@@ -2,3 +2,5 @@
 
 r_dir_file(system_app, cgroup)
 allow system_app proc_pagetypeinfo:file { read open getattr };
+
+dontaudit system_app debugfs_tracing:file { read open };

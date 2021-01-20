@@ -6,3 +6,6 @@ type persist_rmnet_prop, property_type;
 type persist_data_wda_prop, property_type;
 type persist_data_df_prop, property_type;
 type vendor_camera_prop, property_type;
+type debug_level_prop, property_type;
+type product_ship_prop, property_type;
+type vendor_sehal_init_prop, property_type;

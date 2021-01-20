@@ -11,9 +11,9 @@ type prism_file, file_type;
 
 # DATA
 type display_vendor_data_file, file_type, data_file_type;
+type eden_gpu_vendor_data_file, file_type, data_file_type;
 type mediadrm_vendor_data_file, file_type, data_file_type;
 type npu_vendor_data_file, file_type, data_file_type;
-type eden_gpu_vendor_data_file, file_type, data_file_type;
 type vendor_eden_gpu_vendor_file, file_type, vendor_file_type;
 
 ## DEBUGFS
@@ -23,14 +23,15 @@ type debugfs_mali, fs_type, debugfs_type;
 type debugfs_mali_mem, fs_type, debugfs_type;
 
 ## SYSFS
+type sysfs_camera, sysfs_type, r_fs_type, fs_type;
+type sysfs_camera_writable, sysfs_type, rw_fs_type, fs_type;
 type sysfs_chipid, sysfs_type, r_fs_type, fs_type;
 type sysfs_decon, sysfs_type, r_fs_type, fs_type;
 type sysfs_decon_writable, sysfs_type, rw_fs_type, fs_type;
-type sysfs_v4l, sysfs_type, r_fs_type, fs_type;
-type sysfs_npu_version, sysfs_type, r_fs_type, fs_type;
-type sysfs_camera, sysfs_type, r_fs_type, fs_type;
-type sysfs_camera_writable, sysfs_type, rw_fs_type, fs_type;
+type sysfs_input_writable, sysfs_type, rw_fs_type, fs_type;
 type sysfs_mem_boost_writable, sysfs_type, rw_fs_type, fs_type;
+type sysfs_npu_version, sysfs_type, r_fs_type, fs_type;
+type sysfs_v4l, sysfs_type, r_fs_type, fs_type;
 
 ### VENDOR
 type vendor_shimmed_lib, vendor_file_type, file_type;

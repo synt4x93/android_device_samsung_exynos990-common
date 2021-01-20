@@ -20,3 +20,9 @@ allow hal_vendor_eden_runtime_default npu_vendor_data_file:file r_file_perms;
 
 allow hal_vendor_eden_runtime_default eden_gpu_vendor_data_file:dir rw_dir_perms;
 allow hal_vendor_eden_runtime_default eden_gpu_vendor_data_file:file rw_file_perms;
+
+allow hal_vendor_eden_runtime_default debugfs_tracing:file { read open };
+
+allow hal_vendor_eden_runtime_default traced_producer_socket:sock_file write;
+
+dontaudit hal_vendor_eden_runtime_default traced:unix_stream_socket connectto;

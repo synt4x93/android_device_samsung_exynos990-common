@@ -1,0 +1,7 @@
+# hal_secure_element_default.te
+
+allow hal_secure_element_default init: unix_stream_socket connectto;
+allow hal_secure_element_default nfc_device:chr_file rw_file_perms;
+allow hal_secure_element_default property_socket:sock_file write;
+set_prop(hal_secure_element_default, vendor_sehal_init_prop)
+

@@ -1,2 +1,6 @@
+# rild.te
+
 allow rild hal_camera_default:dir search;
 allow rild hal_camera_default:file { read open getattr };
+allow rild product_ship_prop:file { read open };
+get_prop(rild, product_ship_prop)
