@@ -25,10 +25,22 @@
 static inline const char* BtmGetDefaultName()
 {
     char product_device[PROPERTY_VALUE_MAX];
-    property_get("ro.product.device", product_device, "");
+    property_get("ro.product.name", product_device, "");
 
-    if (strstr(product_device, "x1s"))
+    if (strstr(product_device, "x1sxxx"))
+        return "Galaxy S20 5G";
+
+    if (strstr(product_device, "x1sxx"))
         return "Galaxy S20";
+
+    if (strstr(product_device, "y2sxxx"))
+        return "Galaxy S20+ 5G";
+
+    if (strstr(product_device, "y2sxx"))
+        return "Galaxy S20+";
+
+    if (strstr(product_device, "z3sxxx"))
+        return "Galaxy S20 Ultra 5G";
 
     // Fallback to Default
     return "Samsung Galaxy";
