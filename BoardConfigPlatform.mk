@@ -13,6 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+include vendor/samsung/exynos990-common/BoardConfigVendor.mk
+
 BUILD_TOP := $(shell pwd)
 
 PLATFORM_PATH := device/samsung/exynos990-common
@@ -245,3 +247,6 @@ BOARD_HAS_DOWNLOAD_MODE := true
 TARGET_RECOVERY_PIXEL_FORMAT := "ABGR_8888"
 BOARD_INCLUDE_RECOVERY_DTBO := true
 TARGET_RECOVERY_FSTAB := $(PLATFORM_PATH)/config/init/fstab.exynos990
+
+### VENDOR SECURITY PATCH DATE
+VENDOR_SECURITY_PATCH := 2021-04-01

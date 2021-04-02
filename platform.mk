@@ -14,6 +14,9 @@
 # limitations under the License.
 #
 
+### PROPRIETARY VENDOR FILES
+$(call inherit-product, vendor/samsung/exynos990-common/exynos990-common-vendor.mk)
+
 PLATFORM_PATH := device/samsung/exynos990-common
 
 # Dynamic Partitions
