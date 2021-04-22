@@ -18,8 +18,9 @@ PRODUCT_PACKAGES += \
 
 ### BLUETOOTH
 PRODUCT_PACKAGES += \
-    android.hardware.bluetooth@1.0-impl \
-    android.hardware.bluetooth@1.0-service
+    android.hardware.bluetooth@1.0-impl:64 \
+    android.hardware.bluetooth@1.0-service \
+    libbt-vendor:64
 
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
