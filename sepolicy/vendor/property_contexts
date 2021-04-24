@@ -3,6 +3,7 @@ ro.factory.factory_binary      u:object_r:vendor_factory_prop:s0
 persist.ril.                   u:object_r:radio_prop:s0
 ro.boot.debug_level            u:object_r:debug_level_prop:s0
 ro.product_ship                u:object_r:product_ship_prop:s0
+ro.product.system.brand        u:object_r:exported_default_prop:s0
 vendor.bluetooth_fw_ver        u:object_r:wifi_log_prop:s0
 vendor.nfc.fw.                 u:object_r:vendor_nfc_prop:s0
 persist.data.wda.              u:object_r:persist_data_wda_prop:s0

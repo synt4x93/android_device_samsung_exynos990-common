@@ -1,6 +1,7 @@
 # kernel.te
 
 allow kernel app_efs_file:file write;
+allow kernel block_device:dir search;
 allow kernel device:chr_file { create setattr getattr unlink };
 allow kernel device:dir { add_name write remove_name rmdir };
 allow kernel efs_file:dir r_dir_perms;
