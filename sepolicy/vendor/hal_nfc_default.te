@@ -1,7 +1,6 @@
 # hal_nfc_default.te
 
-add_hwservice(hal_nfc_default, hal_nfc_hwservice);
-allow nfc runtime_event_log_tags_file:file getattr;
+allow hal_nfc_default nfc_vendor_data_file:dir create_dir_perms;
+allow hal_nfc_default nfc_vendor_data_file:dir create_file_perms;
 get_prop(hal_nfc_default, product_ship_prop);
-init_daemon_domain(hal_nfc_default);
 set_prop(hal_nfc_default, vendor_nfc_prop);
