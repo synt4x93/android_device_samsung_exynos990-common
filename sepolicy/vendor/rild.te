@@ -2,5 +2,7 @@
 
 allow rild hal_camera_default:dir search;
 allow rild hal_camera_default:file { read open getattr };
+allow rild hal_secure_element_default:dir search;
+allow rild hal_secure_element_default:file r_file_perms;
 allow rild product_ship_prop:file { read open };
 get_prop(rild, product_ship_prop)
