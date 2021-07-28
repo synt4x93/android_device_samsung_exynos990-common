@@ -154,10 +154,8 @@
         <interface>
             <name>IHealth</name>
             <instance>default</instance>
-            <instance>sehhealth</instance>
         </interface>
         <fqname>@2.0::IHealth/default</fqname>
-        <fqname>@2.0::IHealth/sehhealth</fqname>
     </hal>
     <hal format="hidl" override="true">
         <name>android.hardware.keymaster</name>
@@ -290,7 +288,7 @@
             <name>ISehBiometricsFace</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.0::ISehBiometricsFace/default</fqname>
+        <fqname>@2.0::ISehBiometricsFace/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.samsung.hardware.biometrics.fingerprint</name>
@@ -343,16 +341,6 @@
         <fqname>@2.0::ISehGnss/default</fqname>
     </hal>
     <hal format="hidl">
-        <name>vendor.samsung.hardware.health</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>ISehHealth</name>
-            <instance>sehhealth</instance>
-        </interface>
-        <fqname>@1.0::ISehHealth/sehhealth</fqname>
-    </hal>
-    <hal format="hidl">
         <name>vendor.samsung.hardware.light</name>
         <transport>hwbinder</transport>
         <version>3.0</version>
@@ -362,15 +350,9 @@
         </interface>
         <fqname>@3.0::ISehLight/default</fqname>
     </hal>
-    <hal format="hidl">
-        <name>vendor.samsung.hardware.nfc</name>
+    <hal format="hidl" override="true">
+        <name>vendor.samsung.hardware.radio</name>
         <transport>hwbinder</transport>
-        <version>2.0</version>
-        <interface>
-            <name>ISehNfc</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@2.0::ISehNfc/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.samsung.hardware.radio</name>
@@ -384,6 +366,10 @@
         <fqname>@2.1::ISehRadio/slot1</fqname>
         <fqname>@2.1::ISehRadio/slot2</fqname>
     </hal>
+    <hal format="hidl" override="true">
+        <name>vendor.samsung.hardware.radio.bridge</name>
+        <transport>hwbinder</transport>
+    </hal>
     <hal format="hidl">
         <name>vendor.samsung.hardware.radio.bridge</name>
         <transport>hwbinder</transport>
@@ -395,6 +381,10 @@
         </interface>
         <fqname>@2.0::ISehBridge/slot1</fqname>
         <fqname>@2.0::ISehBridge/slot2</fqname>
+    </hal>
+    <hal format="hidl" override="true">
+        <name>vendor.samsung.hardware.radio.channel</name>
+        <transport>hwbinder</transport>
     </hal>
     <hal format="hidl">
         <name>vendor.samsung.hardware.radio.channel</name>
@@ -425,12 +415,22 @@
     <hal format="hidl">
         <name>vendor.samsung.hardware.snap</name>
         <transport>hwbinder</transport>
-        <version>1.1</version>
+        <version>1.2</version>
         <interface>
             <name>ISehSnap</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.1::ISehSnap/default</fqname>
+        <fqname>@1.2::ISehSnap/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.samsung.hardware.sysinput</name>
+        <transport>hwbinder</transport>
+        <version>1.1</version>
+        <interface>
+            <name>ISehSysInputDev</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.1::ISehSysInputDev/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.samsung.hardware.tlc.blockchain</name>
@@ -441,16 +441,6 @@
             <instance>default</instance>
         </interface>
         <fqname>@1.0::ISehBlockchain/default</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.samsung.hardware.tlc.ddar</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>ISehDdar</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.0::ISehDdar/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.samsung.hardware.tlc.payment</name>
@@ -475,32 +465,12 @@
     <hal format="hidl">
         <name>vendor.samsung.hardware.vibrator</name>
         <transport>hwbinder</transport>
-        <version>2.1</version>
+        <version>2.2</version>
         <interface>
             <name>ISehVibrator</name>
             <instance>default</instance>
         </interface>
-        <fqname>@2.1::ISehVibrator/default</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.samsung.hardware.wifi</name>
-        <transport>hwbinder</transport>
-        <version>2.1</version>
-        <interface>
-            <name>ISehWifi</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@2.1::ISehWifi/default</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.samsung.hardware.wifi.hostapd</name>
-        <transport>hwbinder</transport>
-        <version>2.1</version>
-        <interface>
-            <name>ISehHostapd</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@2.1::ISehHostapd/default</fqname>
+        <fqname>@2.2::ISehVibrator/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.samsung.hardware.wifi.supplicant</name>
@@ -511,6 +481,16 @@
             <instance>default</instance>
         </interface>
         <fqname>@3.0::ISehSupplicant/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.samsung_slsi.hardware.ExynosA2DPOffload</name>
+        <transport>hwbinder</transport>
+        <version>3.0</version>
+        <interface>
+            <name>IExynosA2DPOffload</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@3.0::IExynosA2DPOffload/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.samsung_slsi.hardware.ExynosHWCServiceTW</name>
@@ -541,6 +521,16 @@
             <instance>default</instance>
         </interface>
         <fqname>@1.0::IEdenruntime/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.samsung_slsi.hardware.epic</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IEpicRequest</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::IEpicRequest/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.samsung_slsi.hardware.geoTransService</name>
