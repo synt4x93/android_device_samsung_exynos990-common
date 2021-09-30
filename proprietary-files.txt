@@ -279,10 +279,6 @@ vendor/lib64/omx/libOMX.Exynos.VP9.Decoder.so
 vendor/lib64/omx/libOMX.Exynos.VP9.Encoder.so
 vendor/lib64/omx/libOMX.Exynos.WMV.Decoder.so
 
-## Power
-vendor/lib/hw/power.default.so
-vendor/lib64/hw/power.default.so
-
 ## RIL
 vendor/bin/hw/rild
 vendor/bin/cbd
