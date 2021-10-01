@@ -66,12 +66,4 @@ void set_ro_product_prop(char const prop[], char const value[])
         auto prop_name = "ro.product." + source + prop;
         property_override(prop_name.c_str(), value, false);
     }
-}
-
-void set_ro_build_prop(char const prop[], char const value[])
-{
-    for (const auto &source : ro_product_props_default_source_order) {
-        auto prop_name = "ro." + source + "build." + prop;
-        property_override(prop_name.c_str(), value, false);
-    }
 };
